@@ -41,6 +41,13 @@
         },
         "tasks": [
             {
+                "taskName": "dotnet-build",
+                "suppressTaskName": true,
+                "args": [ "-c", "dotnet build" ],
+                "isBuildCommand": false,
+                "showOutput": "always"
+            },
+            {
                 "taskName": "build",
                 "suppressTaskName": true,
                 "args": [ "-c", "./dockerTask.sh build debug" ],
