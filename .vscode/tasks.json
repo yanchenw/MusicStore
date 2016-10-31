@@ -9,6 +9,13 @@
         },
         "tasks": [
             {
+                "taskName": "dotnet-build",
+                "suppressTaskName": true,
+                "args": [ "-ExecutionPolicy", "RemoteSigned", "dotnet", "build" ],
+                "isBuildCommand": false,
+                "showOutput": "always"
+            },
+            {
                 "taskName": "build",
                 "suppressTaskName": true,
                 "args": ["-ExecutionPolicy", "RemoteSigned", ".\\dockerTask.ps1", "-Build", "-Environment", "debug" ],
