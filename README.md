@@ -3,6 +3,7 @@
 Compare the performance of local debugging with Docker debugging scenario.
 
 Steps:
+
 1. Clone this repo
 2. Open the repo root with VS Code
 3. Restore the packages
