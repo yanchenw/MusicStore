@@ -11,14 +11,14 @@
             {
                 "taskName": "dotnet-build",
                 "suppressTaskName": true,
-                "args": [ "-ExecutionPolicy", "RemoteSigned", "dotnet", "build" ],
+                "args": [ "-ExecutionPolicy", "RemoteSigned", "measure-command", "{", "dotnet", "build", "}" ],
                 "isBuildCommand": false,
                 "showOutput": "always"
             },
             {
                 "taskName": "build",
                 "suppressTaskName": true,
-                "args": ["-ExecutionPolicy", "RemoteSigned", ".\\dockerTask.ps1", "-Build", "-Environment", "debug" ],
+                "args": ["-ExecutionPolicy", "RemoteSigned", "measure-command", "{", ".\\dockerTask.ps1", "-Build", "-Environment", "debug", "}" ],
                 "isBuildCommand": true,
                 "showOutput": "always",
                 "echoCommand": true
@@ -26,7 +26,7 @@
             {
                 "taskName": "compose",
                 "suppressTaskName": true,
-                "args": ["-ExecutionPolicy", "RemoteSigned", ".\\dockerTask.ps1", "-Compose", "-Environment", "debug" ],
+                "args": ["-ExecutionPolicy", "RemoteSigned", "measure-command", "{", ".\\dockerTask.ps1", "-Compose", "-Environment", "debug", "}" ],
                 "isBuildCommand": false,
                 "showOutput": "always",
                 "echoCommand": true
@@ -34,7 +34,7 @@
             {
                 "taskName": "composeForDebug",
                 "suppressTaskName": true,
-                "args": ["-ExecutionPolicy", "RemoteSigned", ".\\dockerTask.ps1", "-ComposeForDebug", "-Environment", "debug" ],
+                "args": ["-ExecutionPolicy", "RemoteSigned", "measure-command", "{", ".\\dockerTask.ps1", "-ComposeForDebug", "-Environment", "debug", "}" ],
                 "isBuildCommand": false,
                 "showOutput": "always",
                 "echoCommand": true
@@ -50,28 +50,28 @@
             {
                 "taskName": "dotnet-build",
                 "suppressTaskName": true,
-                "args": [ "-c", "dotnet build" ],
+                "args": [ "-c", "time dotnet build" ],
                 "isBuildCommand": false,
                 "showOutput": "always"
             },
             {
                 "taskName": "build",
                 "suppressTaskName": true,
-                "args": [ "-c", "./dockerTask.sh build debug" ],
+                "args": [ "-c", "time ./dockerTask.sh build debug" ],
                 "isBuildCommand": true,
                 "showOutput": "always"
             },
             {
                 "taskName": "compose",
                 "suppressTaskName": true,
-                "args": [ "-c", "./dockerTask.sh compose debug" ],
+                "args": [ "-c", "time ./dockerTask.sh compose debug" ],
                 "isBuildCommand": false,
                 "showOutput": "always"
             },
             {
                 "taskName": "composeForDebug",
                 "suppressTaskName": true,
-                "args": [ "-c", "./dockerTask.sh composeForDebug debug" ],
+                "args": [ "-c", "time ./dockerTask.sh composeForDebug debug" ],
                 "isBuildCommand": false,
                 "showOutput": "always"
             }
